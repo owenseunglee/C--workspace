@@ -320,39 +320,3 @@ void Library::increment_current_date()
         }
     }
 } // end of increment_current_date
-        
-int main()
-{
-    Book b(123, "Phantom", "Juster");
-    Album a(456, "...And", "Fast");
-    Movie m(567, "laput", "miyaza");
-
-    Patron p1(000, "Joe");
-    Patron p2(111, "YAAA");
-    
-    Library Lib;
-
-    lib.add_library_item(&b);
-    lib.add_library_item(&a);
-    lib.add_patron(&p1);
-    lib.add_patron(&p2);
-
-    lib.check_out_library_item (111, 456);
-
-    for (int i = 0; i < 7; ++i)
-    {
-        lib.increment_current_date();
-    }
-
-    lib.check_out_library_item(000, 567);
-
-    cout << a.get_location() << " " << b.get_library_id() << " " << b.get_title() << endl;
-
-    for (int i = 0; i < 15; ++i)
-    {
-        lib.increment_current_date();
-    }
-
-    cout << "Fine for Joe: " << p1.get_fine_amount() << endl;
-    cout << "Fine for YAAA: " << p2.get_fine_amount() << endl;
-}
